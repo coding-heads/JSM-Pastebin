@@ -11,6 +11,7 @@
   "author": "The JavaScript Master Community Discord https://discord.com/invite/n6EdbFJ",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mustache-express": "^1.3.2"
   }
 }
