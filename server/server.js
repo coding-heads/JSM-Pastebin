@@ -2,7 +2,7 @@ const express = require("express");
 const webpageRouter = require("./routes/webpage.js");
 const mustache = require("mustache-express");
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.engine("html", mustache());
 app.set("view engine", "html");
