@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 
 app.engine("html", mustache());
 app.set("view engine", "html");
-app.set("views", __dirname + "/views/");
+app.set("views", __dirname + "/views/components");
 
 /**
  * @TODO create a real route :-)
