@@ -15,7 +15,6 @@ const db = require("../../database-temp/db.js");
 webpageRouter.get("/", async (req, res) => {
   let sql = "select content from pastes order by created desc limit 3";
   let rows = await db.getRows(sql);
-  console.log(rows[0]);
   let recentPastes = mustache.render(recentPastesView, {
     1: rows[0].content,
     2: rows[1].content,
@@ -27,7 +26,6 @@ webpageRouter.get("/", async (req, res) => {
 //For static viewing of submitted pastes.
 webpageRouter.get("/view/:pasteID", async (req, res) => {
   let pasteContent = await db.getPaste(req.params.pasteID);
-  console.log(pasteContent);
   res.render("../pages/viewpaste", { pid: pasteContent.content });
 });
 

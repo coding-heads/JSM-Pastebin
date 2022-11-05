@@ -4,7 +4,7 @@ const { open } = require("sqlite");
 async function openDB() {
   // open the database
   return await open({
-    filename: "./database-temp/develop.db",
+    filename: __dirname + "/develop.db",
     driver: sqlite3.Database,
   });
 }
