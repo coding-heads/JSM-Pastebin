@@ -1,9 +1,22 @@
 const express = require("express");
 const webpageRouter = express.Router();
+const mustache = require("mustache");
+const fs = require("fs").promises;
 
+(async () => {
+  recentPastesView = await fs.readFile(
+    __dirname + "/../views/components/recentPastes.html",
+    "utf8"
+  );
+})();
 //render homepage
 webpageRouter.get("/", (req, res) => {
-  res.render("../pages/index", { date: new Date() });
+  let recentPastes = mustache.render(recentPastesView, {
+    1: "oooh",
+    2: "o!!!",
+    3: "aahh",
+  });
+  res.render("../pages/home", { recentPastes: recentPastes });
 });
 
 //For static viewing of submitted pastes.
