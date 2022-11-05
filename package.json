@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "build": "npm i && touch database-temp/develop.db"
   },
   "keywords": [],
   "author": "The JavaScript Master Community Discord https://discord.com/invite/n6EdbFJ",
