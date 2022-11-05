@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@700&family=Mukta&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <link href="./assets/css/tippy.css" rel="stylesheet" />
+    <link href="./ace/css/theme/cloud9_day.css" rel="stylesheet" />
+    <script
+      src="./ace/src/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+
+    <script
+      src="./ace/src/mode-javascript.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="./main.js" type="module" defer></script>
+    <script
+      src="https://kit.fontawesome.com/059d4b17cf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>ScriptBin</title>
+  </head>
+  <body>
+    {{>header}}
+    <div class="main">
+      <div class="dimmer"></div>
+
+      <div id="editor" class="mainContent shutterCode"></div>
+      <div class="recentPastesTitle"><span>Recent Pastes:</span></div>
+      {{{recentPastes}}}
+    </div>
+    {{>controls}} {{>footer}}
+  </body>
+</html>

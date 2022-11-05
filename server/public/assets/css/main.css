@@ -1,0 +1,247 @@
+/* font-family: 'Changa', sans-serif;
+ */
+
+ ::-webkit-scrollbar {
+    width:12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #060606;
+  }
+  /* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(67, 67, 67);
+  border-radius: 20px;
+}
+ html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body{
+    color: #d9d9d9;
+    font-family: 'Mukta', sans-serif;
+    background: linear-gradient(#111111,#000000);
+
+    left:0px;
+    top:0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+
+
+overflow-x: hidden;
+
+
+}
+
+.header{
+    position: fixed;
+    z-index: 3;
+    top:0.1em;
+    width: 100vw;
+    height: 5rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background:linear-gradient(#121212,#0d0d0d);
+
+}
+.logo{
+    font-size: 3rem;
+    font-family: 'Changa', sans-serif;
+    color: #6495ed;
+    border-bottom: 2px solid #6495ed;
+
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.navbar img{
+    width: 4rem;
+}
+.header div{
+    display: flex;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+.introContent{
+    position: relative;
+    font-size: x-large;
+    margin-top: 6rem;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+.footer{
+    position: fixed;
+    color: #2e2e2e;
+    background:linear-gradient(#050505,#000000) !important;
+    top:100vh;
+    transform: translateY(-100%);
+    width: 100vw;
+    height: 5rem;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+
+.main {
+    position: relative;
+    left:0;
+    top:0rem;
+    width: 100vw;
+    height: fit-content;
+    line-height: 1.75;
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: column;
+
+    justify-content:flex-start;
+    align-items: center;
+
+
+  }
+  .dimmer{
+    position: absolute;
+    opacity: 0;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    background-color: #000000ea;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  .showDimmer{
+    opacity: 1;
+  }
+  .controls{
+    opacity: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 10vh;
+    position: absolute;
+    top:100%;
+    left:50%;
+    transform: translateY(0%) translateX(-30%);
+    /* height: 15rem; */
+    width: 60vw;
+
+    transition: all 0.3s ease-out;
+  }
+  .controls i{
+    opacity: 0.3;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 12px black);
+  }
+  .showControls{
+    opacity: 1;
+    transform: translateY(-100%) translateX(-30%);
+
+  }
+
+  .controls i:hover{
+    opacity: 1 !important;
+}
+#addPasteButton{
+z-index: 2;
+        font-size: 4rem !important;
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.5;
+}
+    .mainContent{
+
+        margin-top: 7rem;
+        z-index: 5;
+
+        background-color: #191919;
+        font-size: large !important;
+        border-radius: 10px;
+        width: 95vw;
+        height:75vh !important;
+        transition: all 0.5s ease;
+
+    }
+    .shutterCode{position: relative;
+        z-index: 2;
+        margin-top: 7rem;
+        width:96vw !important;
+        height:22rem !important;
+    }
+.recentPastes{
+   width:95vw;
+
+    display: flex;
+    flex-direction: row;
+
+    column-gap: 0.2rem;
+    row-gap: 0.2rem;
+    justify-content: space-between;
+
+}
+@media screen and (max-height:850px){
+    .recentPastes{
+        margin-bottom: 8rem;
+        /* border:2px solid red !important; */
+    }
+
+}
+.recentPastes>div{
+    margin-top:1rem;
+
+    width:22rem;
+    height:14rem;
+
+}
+.recentPastes>div>i{
+    position: relative;
+    padding-left: 1rem;
+    opacity: 0.6;
+    filter: drop-shadow(0px 0px 5px black);
+    top:-1.5rem;
+    left:1.5rem;
+    font-size: 2rem;
+
+
+}
+.recentPastesTitle{
+    width: 90vw;
+    font-size: 2rem;
+    padding-top: 5rem;
+}
+.recentPastes>div>i:hover{
+    opacity: 1;
+}
+.fpaste .ace_scrollbar{
+    display: none;
+}
+.fpaste:hover{
+    filter:blur(0px);
+}
+.fpaste {
+    transition: filter 1s ease;
+    filter:blur(0.9px);
+    border-radius: 15px;
+    width:100%;
+height: 100%;
+    /* border: 2px solid #6495ed;
+    border-radius: 15px;
+    background-color: #191919;
+    box-shadow: 4px 4px 4px #4668a738; */
+    /* border: 1px solid red; */
+}

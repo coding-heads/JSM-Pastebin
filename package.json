@@ -11,7 +11,11 @@
   "author": "The JavaScript Master Community Discord https://discord.com/invite/n6EdbFJ",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.1",
     "express": "^4.18.2",
-    "mustache-express": "^1.3.2"
+    "mustache": "^4.2.0",
+    "mustache-express": "^1.3.2",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.2"
   }
 }
