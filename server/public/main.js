@@ -3,7 +3,7 @@ const controls = document.querySelector(".controls");
 const dimmer = document.querySelector(".dimmer");
 const header = document.querySelector(".header");
 [...document.querySelectorAll("i")].map((el) => {
-  el.addEventListener("click", () => {
+  el.addEventListener("click", async () => {
     switch (el.id) {
       case "close":
         header.style.opacity = 1;
@@ -11,6 +11,19 @@ const header = document.querySelector(".header");
         editorDiv.classList.add("shutterCode");
         controls.classList.remove("showControls");
 
+        break;
+      case "save":
+        console.log(editorDiv.innerText);
+        let res = await fetch("/pastes/new", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            content: editorDiv.innerText,
+          }),
+        });
+        let v = await res.json();
+        console.log(v);
+        window.location.href = "./view/" + v.id;
         break;
     }
   });
