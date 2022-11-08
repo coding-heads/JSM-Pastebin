@@ -38,38 +38,31 @@ editorDiv.addEventListener("click", () => {
     editor.renderer.updateFull();
   }, 500);
 });
-const editor = ace.edit("editor");
-editor.setTheme("ace/theme/tomorrow_night");
-//editor.setBackground("white");
-editor.session.setMode("ace/mode/javascript");
-editor.setShowPrintMargin(false);
-editor.renderer.setShowGutter(false);
+
+const updateEditor = (editor, printMargin, showGutter, useWorker, resizeAndUpdate)=>{
+  editor.setTheme('ace/theme/tomorrow_night');
+  editor.session.setMode('ace/mode/javascript');
+  editor.setShowPrintMargin(printMargin);
+  editor.renderer.setShowGutter(showGutter);
+  editor.getSession().setUseWorker(useWorker);
+  if (!resizeAndUpdate) return;
+  editor.resize();
+  editor.renderer.updateFull();
+}
+
+const editor = ace.edit('editor');
+updateEditor(editor, false, false, false, false);
 editor.setAutoScrollEditorIntoView(true);
-editor.getSession().setUseWorker(false);
-const editor2 = ace.edit("featuredPaste1");
-editor2.setTheme("ace/theme/tomorrow_night");
-editor2.session.setMode("ace/mode/javascript");
-editor2.setShowPrintMargin(false);
-editor2.renderer.setShowGutter(false);
-editor2.getSession().setUseWorker(false);
-editor2.resize();
-editor2.renderer.updateFull();
-const editor3 = ace.edit("featuredPaste2");
-editor3.setTheme("ace/theme/tomorrow_night");
-editor3.session.setMode("ace/mode/javascript");
-editor3.setShowPrintMargin(false);
-editor3.renderer.setShowGutter(false);
-editor3.getSession().setUseWorker(false);
-editor3.resize();
-editor3.renderer.updateFull();
-const editor4 = ace.edit("featuredPaste3");
-editor4.setTheme("ace/theme/tomorrow_night");
-editor4.session.setMode("ace/mode/javascript");
-editor4.setShowPrintMargin(false);
-editor4.renderer.setShowGutter(false);
-editor4.getSession().setUseWorker(false);
-editor4.resize();
-editor4.renderer.updateFull();
+
+const editor2 = ace.edit('featuredPaste1');
+updateEditor(editor2, false, false, false, true);
+
+const editor3 = ace.edit('featuredPaste2');
+updateEditor(editor3, false, false, false, true);
+
+const editor4 = ace.edit('featuredPaste3');
+updateEditor(editor4, false, false, false, true);
+
 let editors = [editor2, editor3, editor4];
 tippy(".fa-circle-user", {
   content: `
